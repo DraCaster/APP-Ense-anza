@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nivel 1 - Actividad 2</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script type="text/javascript" src="../js/funciones.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/animacion.css">
+	<script src="../js/jquery-3.1.1.js"></script>
+    <script src="../js/artyom.min.js"></script>
+    <script src="../js/artyomCommands.js"></script>
+    <script type="text/javascript" src="../js/cargaimg.js"></script>
+</head>
+<body onload="javascript: startArtyom()">
+
+	<!-- PRESENTACION <-->
+	<div id="presentation">
+		<div class="center">
+			<h1>Yendo al siguiente juego ...</h1>
+			<img class="slideDown imgmonstruo" src="../img/tini.png">
+		</div>
+	</div>
+
+	<!-- ACA INICIA EL JUEGO -->
+	<div id="game" class="center contenedor" style="display:none; text-align:center; width:100%">
+		<h1><img src="../img/tini.png" class="imgmonstruosjuego">	 Ayuda a Tini a elegir los <br>dibujos que comienzan con la letra A</h1>
+
+	<div class="center">
+        <span> 
+        	<img class="iconoConfig" src="../img/config.png">
+            <br>
+        	<select>
+        		<option id="vala" value="a">Letra A</option>
+  				<option id="valo" value="o">Letra O</option>
+  				<option id="valu" value="u">Letra U</option>
+			</select>
+		</span>
+		<button onclick="javascript: config()">Cambiar</button>  	
+    </div>
+
+		<div class="izquierda">
+			<img class="iconoSonido" id="imgsonido" src="../img/sonido.png">
+			<table class="tablas">
+				<tr class="center">
+					<td class="center">
+						<img  class="imgJuegos imagen1" onclick="javascript: enmarcar(event)">
+					</td>
+					<td class="center">
+						<img  class="imgJuegos imagen2"   onclick="javascript: enmarcar(event)">
+					</td>
+				</tr>
+				<tr>
+					<td class="center">
+						<img class="imgJuegos imagen3" onclick="javascript: enmarcar(event)">
+					</td>
+					<td class="center">
+						<img class="imgJuegos imagen4" onclick="javascript: enmarcar(event)">
+					</td>
+			</table>
+		</div>
+		<div class="derecha">
+			 <h1>Tini ayuda  <img src="../img/tini.png" class="imgmonstruosjuego"></h1> 
+			 <p>Haz click en las imagenes y luego presiona el boton "Comprobar" para saber si las imagenes que elegiste son las correctas.</p>
+			 <button class="botonJuegos" onclick="javascript: comprobar()"><img class="botonIJuegos" src="../img/comprobar.png"></button> <br>
+       		 <button class="botonJuegos" onclick="confirmSalida()"><img src="../img/salir.png" class="botonIJuegos"></button>
+		</div>
+	</div> <!-- contenedor -->
+   
+
+	<script>
+		var seleccionadas= [];
+		
+		//Funciones al iniciar el juego
+		window.onload = function() {
+			
+			setTimeout(function(){
+				$('#presentation').css("display","none");
+				$('#game').css("display","block");
+			},999);
+		};
+
+        $('#imgsonido').click(function() {
+            artyom.say("Ayuda a Tini a elegir los dibujos que comienzan con la letra A")
+        });
+    </script>
+</body>
+</html>

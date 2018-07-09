@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nivel 2 - Juego 2</title>
+
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animacion.css">
+    <script type="text/javascript" src="../js/funciones.js"></script>
+
+    <script src="../js/jquery-3.1.1.js"></script>
+    <script src="../js/artyom.min.js"></script>
+    <script src="../js/artyomCommands.js"></script>
+</head>
+<body>
+
+        <!-- PRESENTACION <-->
+    <div id="presentation">
+        <div class="center">
+            <h1>Yendo al siguiente juego ...</h1>
+            <img class="slideDown imgmonstruo" src="../img/flopi.png">
+        </div>
+    </div>
+
+   <!-- INICIA EL JUEGO-->
+    <div id="game" style="display:none; text-align:center; width:100%"> <!-- contenedor -->
+	    <h1><img class="slideDown imgmonstruosjuego" src="../img/flopi.png"> ¿En que estoy pensando?</h1>
+        <div class="center">
+        <h1 id='letra'>
+            Estoy pensando en algo que empieza con MMMMM...
+        </h1>
+        
+        <div class="contenedor"> <!-- Contenedor de las tablas y los dos bloques -->
+            <div class="izquierda">
+             <img class="iconoSonido" id="imgsonido" src="../img/sonido.png">
+             <table class="tablas tablaProp">
+                <tr> 
+                  <td >
+                          <div onclick="javascript: enmarcar(event)">
+                         <img data-valor="p" id="pan"  class="imgJuegos slideDown" src="../img/niveles/nivel2/pan.jpg">
+              		        </div>
+                     </td>
+                     <td>
+                         <div  onclick="javascript: enmarcar(event)">
+                    <img data-valor="p" id="paz"  class="imgJuegos slideDown" src="../img/niveles/nivel2/paz.png">
+                 </div>
+                 </td>
+                </tr>
+                  <tr>
+                <td>
+               		 <div  onclick="javascript: enmarcar(event)">
+             	  	 <img data-valor="m" id="miel"  class="imgJuegos slideUp" src="../img/niveles/nivel2/miel.jpg">
+            		 </div>
+                </td>
+                <td>
+                	<div  onclick="javascript: enmarcar(event)">
+             	    <img data-valor="g" id="gol"  class="imgJuegos slideUp" src="../img/niveles/nivel2/gol.png">
+             		</div>
+                </td>
+            </tr>
+        </table>
+    </div> <!-- Fin contenedor izquierda -->
+
+    <div class="derecha"><h1><img src="../img/flopi.png" class="imgmonstruosjuego">Flopi ayuda.</h1>
+        <button class="botonJuegos" onclick="javascript: comprobar()"><img class="botonIJuegos" src="../img/comprobar.png"></button> <br>
+        <button class="botonJuegos" onclick="confirmSalida()"><img src="../img/salir.png" class="botonIJuegos"></button>
+    </div> <!--Fin contenedor derecha-->
+
+    </div><!-- Fin contenedor tablas -->
+
+</div> <!-- end contenedor -->
+
+
+<!--Sonido -->
+
+ <script>
+            window.onload = function() {
+            
+            setTimeout(function(){
+                $('#presentation').css("display","none");
+                $('#game').css("display","block");
+            },999);
+        };
+
+        function startArtyom() {
+            artyom.initialize({
+                lang: "es-ES",
+                continuous: false, // Reconoce 1 solo comando y para de escuchar
+                listen: true, // Iniciar !
+                debug: true, // Muestra un informe en la consola
+                speed: 20 // Habla normalmente
+            });
+        };
+
+
+        $('#pan').click(function() {
+            artyom.say("Pan")
+        });
+
+        $('#paz').click(function() {
+            artyom.say("Paz")
+        });
+
+        $('#miel').click(function() {
+            artyom.say("Miel")
+        });
+
+        $('#gol').click(function() {
+            artyom.say("gol")
+        });
+
+        $('#imgsonido').click(function() {
+            artyom.say("Estoy pensando en algo que empieza con M")
+        });
+    </script>
+</body>
+</html>

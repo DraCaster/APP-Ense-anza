@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Nivel 2 - Juego 1</title>
+
+   <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animacion.css">
+    <script type="text/javascript" src="../js/funciones.js"></script>
+
+    <script src="../js/jquery-3.1.1.js"></script>
+    <script src="../js/artyom.min.js"></script>
+    <script src="../js/artyomCommands.js"></script>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#selectable" ).selectable({
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable li" ).index( this );
+          result.append( " la opcion " + ( index + 1 ) );
+        });
+      }
+    });
+  } );
+    $( function() {
+    $( "#selectable1" ).selectable({
+      stop: function() {
+        var result = $( "#select-result1" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable1 li" ).index( this );
+          result.append( " la opcion " + ( index + 1 ) );
+        });
+      }
+    });
+  } );
+  </script>
+</head>
+<body>
+
+
+<div class=" center">
+    <h1><img class="imgmonstruosjuego" src="../img/flopi.png">Veo veo... ¿Que ves?</h1>
+    <h1>Ayuda a Flopi a elegir la opcion correcta.</h1>
+</div>
+
+<!--PRIMER ACTIVIDAD DEL JUEGO 1 -->
+<div class="contenedor " id="mostrar">
+  <div class="izquierda">
+  <table class="tablanivel2">
+    <tr>
+      <td>
+	    <img id="farol" class="imgNivel2" src="../img/niveles/nivel2/farol.jpeg"> </td>
+    <td> <p id="feedback">
+      <span>Elegiste:</span> <span id="select-result"></span>
+      </p>
+      <ol id="selectable" >
+      <li data-valor="a" id="arbol" class="ui-widget-content" onclick="javascript: guardarValor()" >Arbol</li>
+      <li data-valor="f" id="farol1" class="ui-widget-content" onclick="javascript: guardarValor()">Farol</li>
+      <li data-valor="a" id="alfajor" class="ui-widget-content" onclick="javascript: guardarValor()">Alfajor</li>
+      </ol> </td> </tr>
+  </table>
+</div>
+<div class="derecha">
+  <h1><img class="imgmonstruosjuego" src="../img/flopi.png"> Flopi ayuda.</h1>
+  <p>Necesito saber como se escribe esa imagen, ¿me ayudas? Hace click en una palabra y luego presiona el boton "Comprobar" para saber si es la correcta.</p>
+    <button class="botonJuegos" onclick="javascript: comprobar2()"><img class="botonIJuegos" src="../img/comprobar.png"></button> <br>
+        <button class="botonJuegos  " onclick="confirmSalida()"><img src="../img/salir.png" class="botonIJuegos"></button>
+</div>
+</div>
+
+<!--SEGUNDA ACTIVIDAD DEL JUEGO 1 -->
+<div class="contenedor ocultar">
+  <div class="izquierda">
+    <table class="tablanivel2">
+    <tr>
+    <td>
+      <img id="pez" class="imgNivel2" src="../img/niveles/nivel2/pez.png"> </td>
+    <td> <p id="feedback1">
+    <span>Elegiste:</span> <span id="select-result1"></span>
+    </p>
+    <ol id="selectable1" >
+    <li data-valor="m" id="mar" class="ui-widget-content" onclick="javascript: guardarValor()" >Mar</li>
+   <li data-valor="o" id="oso" class="ui-widget-content" onclick="javascript: guardarValor()">Oso</li>
+    <li data-valor="p" id="pez1" class="ui-widget-content" onclick="javascript: guardarValor()">Pez</li>
+    </ol> </td> </tr>
+    </table>
+  </div>
+  <div class="derecha">
+  <h1><img class="imgmonstruosjuego" src="../img/flopi.png"> Flopi ayuda.</h1>
+  <p>Necesito saber como se escribe esa imagen, ¿me ayudas? Hace click en una palabra y luego presiona el boton "Comprobar" para saber si es la correcta.</p>
+    <button class="botonJuegos" onclick="javascript: comprobar2()"><img class="botonIJuegos" src="../img/comprobar.png"></button> <br>
+        <button class="botonJuegos  " onclick="confirmSalida()"><img src="../img/salir.png" class="botonIJuegos"></button>
+</div>
+</div>
+ 
+
+ <!-- Texto a voz -->
+
+  <script>
+        function startArtyom() {
+            artyom.initialize({
+                lang: "es-ES",
+                continuous: true, // Reconoce 1 solo comando y para de escuchar
+                listen: true, // Iniciar !
+                debug: true, // Muestra un informe en la consola
+                speed: 20 // Habla normalmente
+            });
+        };
+        $('#farol').click(function() {
+            artyom.say("farol")
+        });
+
+        $('#farol1').click(function() {
+            artyom.say("farol")
+        });
+
+         $('#arbol').click(function() {
+            artyom.say("arbol")
+        });
+         $('#alfajor').click(function() {
+            artyom.say("alfajor")
+        });
+           $('#mar').click(function() {
+            artyom.say("mar")
+        });
+             $('#oso').click(function() {
+            artyom.say("oso")
+        });
+              $('#pez').click(function() {
+            artyom.say("pez")
+        });
+             $('#pez1').click(function() {
+            artyom.say("pez")
+        });
+
+    </script>
+</body>
+</html>
