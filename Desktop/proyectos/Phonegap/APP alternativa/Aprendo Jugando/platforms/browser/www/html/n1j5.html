@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Nivel 1 - Juego 5</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" href="../css/animacion.css">
+	<script type="text/javascript" src="../js/funciones.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/responsive.css">
+</head>
+
+<body>
+
+	<!-- PRESENTACION <-->
+	<div id="presentation">
+		<div class="center">
+			<h1>Yendo al siguiente juego ...</h1>
+			<img class="slideDown imgmonstruo" src="../img/tini.png">
+		</div>
+	</div>
+
+	<!-- ACA INICIA EL JUEGO -->
+	<div id="game" style="display:none; text-align:center; width:100%">
+		<h1 id="letra">
+			<img src="../img/tini.png" class="imgmonstruosjuego"> Ayuda a Tini a elegir los
+			<br>dibujos que comienzan con la letra A</h1>
+
+
+		<div class="contenedor2">
+			<div class="izquierda2">
+				<img class="iconoSonido" id="imgsonido" src="../img/sonido.png" alt="sonido">
+				<table class="tablas tablaProp">
+					<tr>
+						<td class="center">
+							<div>
+								<img id="a3" class="imgJuegos slideDown" data-valor="anana" onclick="javascript: enmarcarMas(event)" src="../img/niveles/anana.png"
+								 alt="imagen anana">
+							</div>
+						</td>
+						<td class="center">
+							<div>
+								<img id="i1" class="imgJuegos slideDown" data-valor="iman" onclick="javascript: enmarcarMas(event)" src="../img/niveles/iman.png"
+								 alt="imagen iman">
+							</div>
+						</td>
+						<td class="center">
+							<div>
+								<img id="a2" class="imgJuegos slideDown" data-valor="ala" onclick="javascript: enmarcarMas(event)" src="../img/niveles/ala.png"
+								 alt="imagen ala">
+							</div>
+						</td>
+						<td class="center">
+							<div>
+								<img id="e1" class="imgJuegos slideDown" data-valor="empanadas" onclick="javascript: enmarcarMas(event)" src="../img/niveles/empanadas.png"
+								 alt="imagen indio">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="center">
+							<div>
+								<img id="o" class="imgJuegos slideDown" data-valor="oreja" onclick="javascript: enmarcarMas(event)" src="../img/niveles/oreja.png"
+								 alt="imagen oreja">
+							</div>
+						</td>
+						<td class="center">
+							<div>
+								<img id="e2" class="imgJuegos slideDown" data-valor="espejo" onclick="javascript: enmarcarMas(event)" src="../img/niveles/espejo.png"
+								 alt="imagen espejo">
+							</div>
+						</td>
+						<td class="center">
+							<div>
+								<img id="a1" class="imgJuegos slideDown" data-valor="anteojos" onclick="javascript: enmarcarMas(event)" src="../img/niveles/anteojos.png"
+								 alt="imagen indio">
+							</div>
+						</td>
+						<td class="center">
+							<div>
+								<img id="i2" class="imgJuegos slideDown" data-valor="indio" onclick="javascript: enmarcarMas(event)" src="../img/niveles/indio.png"
+								 alt="imagen indio">
+							</div>
+						</td>
+					</tr>
+
+				</table>
+			</div>
+
+			<div class="derecha">
+				<h1>Tini ayuda
+					<img src="../img/tini.png" class="imgmonstruosjuego" alt="imagen monstruo">
+				</h1>
+
+				<p>Elige 3 imagenes y luego presiona "Comprobar" para ver si acertaste. </p>
+				<button class="botonJuegos" onclick="javascript: comprobarJ5()">
+					<img class="botonIJuegos" src="../img/comprobar.png" alt="boton comprobar">
+				</button>
+				<br>
+				<button class="botonJuegos" onclick="confirmSalida()">
+					<img src="../img/salir.png" class="botonIJuegos" alt="boton salir">
+				</button>
+			</div>
+		</div>
+		<!-- contenedor -->
+	</div>
+
+	<!--contenedor-->
+
+
+	<script>
+		var seleccionadas = [];
+
+		//Funciones al iniciar el juego
+		window.onload = function () {
+
+			setTimeout(function () {
+				$('#presentation').css("display", "none");
+				$('#game').css("display", "block");
+			}, 999);
+			startArtyom();
+		};
+	</script>
+		<script src="../js/funciones.js"></script>
+	<script src="../js/funcionesn1j5.js"></script>
+	<script src="../js/jquery-3.1.1.js"></script>
+	<script src="../js/artyom.min.js"></script>
+	<script src="../js/artyomCommands.js"></script>
+
+
+</body>
+
+</html>
