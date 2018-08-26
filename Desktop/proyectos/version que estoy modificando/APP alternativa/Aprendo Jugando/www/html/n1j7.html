@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Nivel 1 - Juego 7</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" href="../css/animacion.css">
+	<link rel="stylesheet" type="text/css" href="../css/responsive.css">
+	<link rel="stylesheet" href="../css/alertify.core.css" />
+    <link rel="stylesheet" href="../css/alertify.default.css" />
+</head>
+
+<body>
+	<!-- PRESENTACION <-->
+	<div id="presentation">
+		<div class="center">
+			<h1>Yendo al siguiente juego ...</h1>
+			<img class="slideDown imgmonstruo" src="../img/tini.png">
+		</div>
+	</div>
+
+	<!-- ACA INICIA EL JUEGO -->
+	<div id="game" class="center" style="display:none; text-align:center; width:100%">
+		<h1 style="margin: 0 0 0 0;">
+			<img src="../img/tini.png" class="imgmonstruosjuego"> Juego en desarrollo.</h1>
+
+			<div class="center">
+				<button class="botonJuegos" onclick="confirmSalida()">
+					<img src="../img/salir.png" class="botonIJuegos" alt="boton salir">
+				</button>
+			</div>
+	</div>
+
+
+	<!--contenedor-->
+	 <script type="text/javascript" src="../js/alertify.js"></script>
+	<script src="../js/funciones.js"></script>
+	<script src="../js/jquery-3.1.1.js"></script>
+	<script src="../js/artyom.min.js"></script>
+	<script src="../js/artyomCommands.js"></script>
+
+	
+	<script>
+		//Funciones al iniciar el juego
+		window.onload = function () {
+
+			setTimeout(function () {
+				$('#presentation').css("display", "none");
+				$('#game').css("display", "block");
+			}, 999);
+			startArtyom();
+		};
+	</script>
+
+
+
+</body>
+
+</html>
