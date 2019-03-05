@@ -16,6 +16,10 @@ function ingresar(val) {
     }, 300);
 }
 
+function reproducirSonido(s) {
+    var sonido = new Audio("../sonidos/" + s);
+    sonido.play();
+}
 
 
 function borrar(id) { var elem = document.getElementById(id); return elem.parentNode.removeChild(elem); }

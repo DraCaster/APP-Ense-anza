@@ -22,7 +22,7 @@
     <!-- ACA INICIA EL JUEGO -->
     <div id="game" class="" style="display:none; text-align:center; width:100%">
         <div class="tituloJuego">
-            <h1 id="letra" class="cubos"><img src="../img/ayuda.png" id="imgsonido" class=" imgmonstruo">LETRA <b class="tam">A</b> - LETRA <b class="tam">O</b></h1>
+            <h1 id="letra" class="cubos"><img src="../img/ayuda.png" id="imgsonido" class=" imgmonstruo" onclick="window.location.href = 'ayudaj6.html'">LETRA <b class="tam">A</b> - LETRA <b class="tam">O</b></h1>
         </div>
 
         <div class="contenedor2">
@@ -99,44 +99,44 @@
                     <tr>
                         <td>
                             <div class="item">
-                                <img id="a4" class="imgJuegosMini slideDown" data-valor="ala" onclick="enmarcar(event);" src="../img/niveles/ala.png" alt="imagen numero uno">
+                                <img id="a4" class="imgJuegosMini slideDown" data-valor="ala" onclick="reproducirSonido('ala.wav'); enmarcar(event);" src="../img/niveles/ala.png" alt="imagen numero uno">
                             </div>
                         </td>
                         <td>
                             <div class="item">
-                                <img id="o3" class="imgJuegosMini slideDown" data-valor="oreja" onclick="enmarcar(event);" src="../img/niveles/oreja.png" alt="imagen numero uno">
+                                <img id="o3" class="imgJuegosMini slideDown" data-valor="oreja" onclick="reproducirSonido('oreja.wav'); enmarcar(event);" src="../img/niveles/oreja.png" alt="imagen numero uno">
                             </div>
                         </td>
                         <td>
                             <div class="item">
-                                <img id="o2" class="imgJuegosMini slideDown" data-valor="ojo" onclick="enmarcar(event);" src="../img/niveles/ojo.png" alt="imagen numero uno">
+                                <img id="o2" class="imgJuegosMini slideDown" data-valor="ojo" onclick="reproducirSonido('ojo.wav'); enmarcar(event);" src="../img/niveles/ojo.png" alt="imagen numero uno">
                             </div>
                         </td>
                         <td>
                             <div class="item">
-                                <img id="a5" class="imgJuegosMini slideDown" data-valor="anillo" onclick="javascript: enmarcar(event);" src="../img/niveles/anillo.png" alt="imagen numero uno">
+                                <img id="a5" class="imgJuegosMini slideDown" data-valor="anillo" onclick="javascript: reproducirSonido('anillo.wav'); enmarcar(event);" src="../img/niveles/anillo.png" alt="imagen numero uno">
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div class="item">
-                                <img id="o3" class="imgJuegosMini slideDown" data-valor="oveja" onclick="javascript: enmarcar(event);" src="../img/niveles/oveja.png" alt="imagen numero uno">
+                                <img id="o3" class="imgJuegosMini slideDown" data-valor="oveja" onclick="javascript: reproducirSonido('oveja.wav'); enmarcar(event);" src="../img/niveles/oveja.png" alt="imagen numero uno">
                             </div>
                         </td>
                         <td>
                             <div class="item">
-                                <img id="a6" class="imgJuegosMini slideDown" data-valor="ara&ntilde;a" onclick="javascript: enmarcar(event);" src="../img/niveles/arania.png" alt="imagen numero uno">
+                                <img id="a6" class="imgJuegosMini slideDown" data-valor="ara&ntilde;a" onclick="javascript: reproducirSonido('arania.wav'); enmarcar(event);" src="../img/niveles/arania.png" alt="imagen numero uno">
                             </div>
                         </td>
                         <td>
                             <div class="item">
-                                <img id="o4" class="imgJuegosMini slideDown" data-valor="olla" onclick="javascript: enmarcar(event);" src="../img/niveles/olla.png" alt="imagen numero uno">
+                                <img id="o4" class="imgJuegosMini slideDown" data-valor="olla" onclick="javascript: reproducirSonido('olla.wav'); enmarcar(event);" src="../img/niveles/olla.png" alt="imagen numero uno">
                             </div>
                         </td>
                         <td>
                             <div class="item">
-                                <img id="a7" class="imgJuegosMini slideDown" data-valor="aro" onclick="javascript: enmarcar(event);" src="../img/niveles/aro.png" alt="imagen numero uno">
+                                <img id="a7" class="imgJuegosMini slideDown" data-valor="aro" onclick="javascript: reproducirSonido('aro.wav'); enmarcar(event);" src="../img/niveles/aro.png" alt="imagen numero uno">
                             </div>
                         </td>
                     </tr>
@@ -156,8 +156,6 @@
             <script src="../js/funcionesN1J8.js"></script>
             <script type="text/javascript" src="../js/alertify.js"></script>
             <script src="../js/jquery-3.1.1.js"></script>
-            <script src="../js/artyom.min.js"></script>
-            <script src="../js/artyomCommands.js"></script>
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
             <script>
@@ -184,7 +182,7 @@
                         $('#presentation').css("display", "none");
                         $('#game').css("display", "block");
                     }, 999);
-                    startArtyom();
+
                 };
             </script>
 

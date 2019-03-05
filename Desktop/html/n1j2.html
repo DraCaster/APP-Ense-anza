@@ -24,7 +24,7 @@
     <div id="game" style="display:none; width:100%">
         <div class="tituloJuego">
             <h1 id="letra" class="cubos">
-                <img src="../img/ayuda.png" id="imgsonidon1j2" class=" imgmonstruo">LETRA <b class="tam">&nbsp;O</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <img src="../img/ayuda.png" id="imgsonidon1j2" class=" imgmonstruo" onclick="window.location.href = 'ayudaj2.html'">LETRA <b class="tam">&nbsp;O</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 <img class="imgAyuda" src="../img/help.png">
             </h1>
         </div>
@@ -37,16 +37,16 @@
             <table class="tablas tablaj1">
                 <tr>
                     <td>
-                        <img id="s" class="imgJuegosG slideDown" data-valor="sapo" onclick="javascript: enmarcar(event)" src="../img/niveles/sapo.png" alt="imagen sapo">
+                        <img id="s" class="imgJuegosG slideDown" data-valor="sapo" onclick="javascript: reproducirSonido('sapo.wav'); enmarcar(event)" src="../img/niveles/sapo.png" alt="imagen sapo">
                     </td>
                     <td>
-                        <img id="o" class="imgJuegosG slideDown" data-valor="oreja" onclick="javascript: enmarcar(event)" src="../img/niveles/oreja.png" alt="imagen oreja">
+                        <img id="o" class="imgJuegosG slideDown" data-valor="oreja" onclick="javascript: reproducirSonido('oreja.wav'); enmarcar(event)" src="../img/niveles/oreja.png" alt="imagen oreja">
                     </td>
                     <td>
-                        <img id="e" class="imgJuegosG slideDown" data-valor="espejo" onclick="javascript: enmarcar(event)" src="../img/niveles/espejo.png" alt="imagen espejo">
+                        <img id="e" class="imgJuegosG slideDown" data-valor="espejo" onclick="javascript: reproducirSonido('espejo.wav'); enmarcar(event)" src="../img/niveles/espejo.png" alt="imagen espejo">
                     </td>
                     <td>
-                        <img id="i" class="imgJuegosG slideDown" data-valor="indio" onclick="javascript: enmarcar(event)" src="../img/niveles/indio.png" alt="imagen indio">
+                        <img id="i" class="imgJuegosG slideDown" data-valor="indio" onclick="javascript: reproducirSonido('indio.wav'); enmarcar(event)" src="../img/niveles/indio.png" alt="imagen indio">
                     </td>
                 </tr>
             </table>
@@ -77,15 +77,12 @@
                 $('#presentation').css("display", "none");
                 $('#game').css("display", "block");
             }, 999);
-            startArtyom();
         };
     </script>
     <script type="text/javascript" src="../js/alertify.js"></script>
     <script src="../js/funciones.js"></script>
     <script src="../js/funcionesn1j2.js"></script>
     <script src="../js/jquery-3.1.1.js"></script>
-    <script src="../js/artyom.min.js"></script>
-    <script src="../js/artyomCommands.js"></script>
 </body>
 
 </html>

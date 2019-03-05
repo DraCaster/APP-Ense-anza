@@ -26,7 +26,8 @@
         <!--PRIMER ACTIVIDAD DEL JUEGO 1 -->
         <div class="contenedor " id="mostrar">
             <div class="tituloJuego">
-                <h1 id="letra" class="cubos"><img src="../img/ayuda.png" id="imgsonido" class=" imgmonstruo">LETRA <b class="tam">&nbsp; I</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img class="imgAyuda globoAyuda" src="../img/help.png" title="Selecciona la palabra que corresponda con la imagen"></h1>
+                <h1 id="letra" class="cubos"><img src="../img/ayuda.png" id="imgsonido" class=" imgmonstruo" onclick="window.location.href = 'ayudaj7.html'">LETRA <b class="tam">&nbsp; I</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img class="imgAyuda globoAyuda" src="../img/help.png"
+                        title="Selecciona la palabra que corresponda con la imagen"></h1>
             </div>
             <div class="izquierda">
                 <table class="tablanivel2">
@@ -39,9 +40,9 @@
                                 <span id="select-result"></span>
                             </p>
                             <ol id="selectable">
-                                <li data-valor="mar" id="m" class="ui-widget-content" onclick="javascript: guardarValor()">MAR</li>
-                                <li data-valor="isla" id="i" class="ui-widget-content" onclick="javascript: guardarValor()">ISLA</li>
-                                <li data-valor="arbol" id="p" class="ui-widget-content" onclick="javascript: guardarValor()">ARBOL</li>
+                                <li data-valor="mar" id="m" class="ui-widget-content" onclick="javascript: reproducirSonido('mago.wav'); guardarValor()">MAGO</li>
+                                <li data-valor="isla" id="i" class="ui-widget-content" onclick="javascript: reproducirSonido('isla.wav'); guardarValor()">ISLA</li>
+                                <li data-valor="arbol" id="p" class="ui-widget-content" onclick="javascript: reproducirSonido('arbol.wav'); guardarValor()">ARBOL</li>
                             </ol>
                         </td>
                     </tr>
@@ -72,9 +73,9 @@
                                 <span id="select-result1"></span>
                             </p>
                             <ol id="selectable1">
-                                <li data-valor="pelo" id="e" class="ui-widget-content" onclick="javascript: guardarValor()">PELO</li>
-                                <li data-valor="oreja" id="o" class="ui-widget-content" onclick="javascript: guardarValor()">OREJA</li>
-                                <li data-valor="aro" id="a" class="ui-widget-content" onclick="javascript: guardarValor()">ARO</li>
+                                <li data-valor="pelo" id="e" class="ui-widget-content" onclick="javascript: reproducirSonido('raton.wav'); guardarValor()">RATON</li>
+                                <li data-valor="oreja" id="o" class="ui-widget-content" onclick="javascript: reproducirSonido('oreja.wav'); guardarValor()">OREJA</li>
+                                <li data-valor="aro" id="a" class="ui-widget-content" onclick="javascript: reproducirSonido('aro.wav'); guardarValor()">ARO</li>
                             </ol>
                         </td>
                     </tr>
@@ -99,15 +100,12 @@
                     $('#presentation').css("display", "none");
                     $('#game').css("display", "block");
                 }, 999);
-                startArtyom();
             };
         </script>
         <script type="text/javascript" src="../js/alertify.js"></script>
         <script src="../js/funciones.js"></script>
         <script src="../js/funcionesn2j1.js"></script>
         <script src="../js/jquery-3.1.1.js"></script>
-        <script src="../js/artyom.min.js"></script>
-        <script src="../js/artyomCommands.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>

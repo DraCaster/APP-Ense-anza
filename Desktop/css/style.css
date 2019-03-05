@@ -7,6 +7,10 @@ body.siguientes{
   background-image:url('../fondo2.png');
   background-repeat: repeat;
 }
+body.ayudas{
+  background-image:url('../fondopapel.png');
+  background-repeat: repeat;
+}
 
 @font-face {
 font-family: PT_Sans;
@@ -597,4 +601,18 @@ text-align: center;
 
 .tablan6{
 	height: 400px;
+}
+
+.contAyudas{
+  margin-top: 28px;
+}
+
+.contAyudasB{
+  margin-top: 28px;
+  font-size: 20px;
+}
+
+.icon{
+  width: 20px;
+  height: 20px;
 }
