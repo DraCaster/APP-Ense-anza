@@ -669,6 +669,7 @@ b {
     margin: 40px 0px 40px 40px;
     border: solid grey;
     border-radius: 4px;
+    margin-top: 94px;
 }
 
 .fila1 {
@@ -677,7 +678,7 @@ b {
     width: auto;
     float: left;
     background: #5f5;
-    margin: 40px 0px 40px 40px;
+    margin: 40px 0px 0px 10px;
     border: solid grey;
     border-radius: 4px;
 }

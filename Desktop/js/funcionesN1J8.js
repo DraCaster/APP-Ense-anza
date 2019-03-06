@@ -53,7 +53,7 @@ function enmarcar(event) {
 
 function confirmar() {
     sndOK.play();
-    alertify.confirm("<img src='../img/feliz.jpg'> <p>Buen trabajo! <b>Acertaste!</b> <br> Seguimos jugando?", function(e) {
+    alertify.confirm("<img src='../img/feliz.jpg'> <h1><b>&iexcl; EXCELENTE ! <br>&iexcl; SIGAMOS JUGANDO ! </b></h1>", function(e) {
         if (e) {
             alertify.success("ELEGISTE '" + alertify.labels.ok + "'");
             setTimeout(function() {
@@ -70,7 +70,7 @@ function confirmar() {
 function alerta() {
     //un alert
     sndNO.play();
-    alertify.alert("<img src='../img/triste.jpg'><b>Ups! Te equivocaste</b> Segui intentando!", function() {
+    alertify.alert("<img src='../img/triste.jpg'> <h1><b> &iexcl; TE EQUIVOCASTE! <br> &iexcl; INTENTALO DE NUEVO ! </b></h1>", function() {
         //aqui introducimos lo que haremos tras cerrar la alerta.
     });
 }

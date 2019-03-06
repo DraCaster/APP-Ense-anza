@@ -3,48 +3,53 @@ var selec;
 var sndOK = new Audio("../sonidos/ganaste.wav");
 var sndNO = new Audio("../sonidos/error.wav");
 
-function checkTable(letra){
-    var tabla=$('#'+letra);
-    var items=tabla.children('tbody').children('tr').find('img');
+function checkTable(letra) {
+    var tabla = $('#' + letra);
+    var items = tabla.children('tbody').children('tr').find('img');
     console.log(items.length);
-    res={
-        valor:true,
-        msj:'Buen trabajo! Pasas al siguiente nivel.'
+    res = {
+        valor: true,
+        msj: 'Buen trabajo! Pasas al siguiente nivel.'
     };
-    if(items.length==4){
-        items.each(function(){
-            if($(this).attr('id')[0]!=letra){
-                res.valor=false;
-                res.msj='Ups, Algo esta tiene que ir del otro lado';
+    if (items.length == 4) {
+        items.each(function() {
+            if ($(this).attr('id')[0] != letra) {
+                res.valor = false;
+                res.msj = 'Ups, Algo esta tiene que ir del otro lado';
             }
         });
-    }else{ res.valor=false;
-            res.msj='Te falta completar alguna fila'}
+    } else {
+        res.valor = false;
+        res.msj = 'Te falta completar alguna fila'
+    }
     return res;
 }
 
 /*Cartelito*/
 
-function confirmar(){
-                sndOK.play();
-                alertify.confirm("<img src='../img/feliz.jpg'> <p>Buen trabajo! <b>Acertaste!</b> <br> Seguimos jugando?", function (e) {
-                    if (e) {
-                        alertify.success("ELEGISTE '" + alertify.labels.ok + "'");
-                         setTimeout(function() {
+function confirmar() {
+    sndOK.play();
+    alertify.confirm("<img src='../img/feliz.jpg'> <h1><b>&iexcl; EXCELENTE ! <br>&iexcl; SIGAMOS JUGANDO ! </b></h1>", function(e) {
+        if (e) {
+            alertify.success("ELEGISTE '" + alertify.labels.ok + "'");
+            setTimeout(function() {
                 window.location.href = '../html/n1j4.html'; //Pasa al siguiente juego
             }, 1300);
-                    } else { alertify.error("ELEGISTE '" + alertify.labels.cancel + "'");
-                    confirmSalida();}
-                }); 
-                return false
-            }
-
-function alerta(){
-      sndNO.play();
-      alertify.alert("<img src='../img/triste.jpg'><b>Ups! Te equivocaste</b> Segui intentando!", function () {
-            //aqui introducimos lo que haremos tras cerrar la alerta.
-      });
+        } else {
+            alertify.error("ELEGISTE '" + alertify.labels.cancel + "'");
+            confirmSalida();
+        }
+    });
+    return false
 }
+
+function alerta() {
+    sndNO.play();
+    alertify.alert("<img src='../img/triste.jpg'> <h1><b> &iexcl; TE EQUIVOCASTE! <br> &iexcl; INTENTALO DE NUEVO ! </b></h1>", function() {
+        //aqui introducimos lo que haremos tras cerrar la alerta.
+    });
+}
+
 function enmarcar(event) {
     selec = event.target;
     if (pintado == false) {
@@ -56,14 +61,12 @@ function enmarcar(event) {
     }
 }
 
-function comprobarN1J8(){
+function comprobarN1J8() {
     console.log(checkTable('e').valor);
     console.log(checkTable('i').valor);
-    if(checkTable('e').valor & checkTable('i').valor){
-       confirmar();
-        } 
-        else {
+    if (checkTable('e').valor & checkTable('i').valor) {
+        confirmar();
+    } else {
         alerta();
-}}
-
-
+    }
+}

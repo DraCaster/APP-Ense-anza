@@ -1,6 +1,6 @@
 // Juego 1
 var selec = null;
-var letraSelec =  null;
+var letraSelec = null;
 var sndOK = new Audio("../sonidos/ganaste.wav");
 var sndNO = new Audio("../sonidos/error.wav");
 
@@ -13,32 +13,34 @@ function guardarValor() {
 
 /*Cartelito*/
 
-function confirmar(){
-                sndOK.play();
-                alertify.confirm("<img src='../img/feliz.jpg'> <p>Buen trabajo! <b>Acertaste!</b> <br> Seguimos jugando?", function (e) {
-                    if (e) {
-                        alertify.success("ELEGISTE '" + alertify.labels.ok + "'");
-                         setTimeout(function() {
+function confirmar() {
+    sndOK.play();
+    alertify.confirm("<img src='../img/feliz.jpg'> <h1><b>&iexcl; EXCELENTE ! <br>&iexcl; SIGAMOS JUGANDO ! </b></h1>", function(e) {
+        if (e) {
+            alertify.success("ELEGISTE '" + alertify.labels.ok + "'");
+            setTimeout(function() {
                 window.location.href = '../html/n1J8.html'; //Pasa al siguiente juego
             }, 1300);
-                    } else { alertify.error("ELEGISTE '" + alertify.labels.cancel + "'");
-                    confirmSalida();}
-                }); 
-                return false
-            }
-
-function alerta(){
-      sndNO.play();
-      alertify.alert("<img src='../img/triste.jpg'><b>Ups! Te equivocaste</b> Segui intentando!", function () {
-            //aqui introducimos lo que haremos tras cerrar la alerta.
-      });
+        } else {
+            alertify.error("ELEGISTE '" + alertify.labels.cancel + "'");
+            confirmSalida();
+        }
+    });
+    return false
 }
 
-function sigue(){
-      sndOK.play();
-      alertify.alert("<img src='../img/feliz.jpg'><b>Muy bien!</b> Sigamos!", function () {
-            //aqui introducimos lo que haremos tras cerrar la alerta.
-      });
+function alerta() {
+    sndNO.play();
+    alertify.alert("<img src='../img/triste.jpg'> <h1><b> &iexcl; TE EQUIVOCASTE! <br> &iexcl; INTENTALO DE NUEVO ! </b></h1>", function() {
+        //aqui introducimos lo que haremos tras cerrar la alerta.
+    });
+}
+
+function sigue() {
+    sndOK.play();
+    alertify.alert("<img src='../img/feliz.jpg'> <h1><b>&iexcl; EXCELENTE ! <br>&iexcl; SIGAMOS JUGANDO ! </b></h1>", function() {
+        //aqui introducimos lo que haremos tras cerrar la alerta.
+    });
 }
 
 function comprobar() {
