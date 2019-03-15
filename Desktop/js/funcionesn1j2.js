@@ -20,13 +20,13 @@ function enmarcar(event) {
 
 /*Cartelito*/
 
-function confirmar() {
+function confirmar(s) {
     sndOK.play();
     alertify.confirm("<img src='../img/feliz.jpg'> <h1><b>&iexcl; EXCELENTE ! <br>&iexcl; SIGAMOS JUGANDO ! </b></h1>", function(e) {
         if (e) {
             alertify.success("ELEGISTE '" + alertify.labels.ok + "'");
             setTimeout(function() {
-                window.location.href = '../html/n1j3.html'; //Pasa al siguiente juego
+                window.location.href = s + '.html'; //Pasa al siguiente juego
             }, 1300);
         } else {
             alertify.error("ELEGISTE '" + alertify.labels.cancel + "'");
@@ -44,12 +44,12 @@ function alerta() {
     });
 }
 
-function comprobar() {
+function comprobar(s) {
     pintado = false;
     $('.cambiarBorde2').removeClass("cambiarBorde2"); //la imagen seleccionada se despinta
 
     if (letraSelec == letraActual) {
-        confirmar();
+        confirmar(s);
     } else {
         alerta();
     }

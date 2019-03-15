@@ -27,13 +27,13 @@ function checkTable(letra) {
 
 /*Cartelito*/
 
-function confirmar() {
+function confirmar(s) {
     sndOK.play();
     alertify.confirm("<img src='../img/feliz.jpg'> <h1><b>&iexcl; EXCELENTE ! <br>&iexcl; SIGAMOS JUGANDO ! </b></h1>", function(e) {
         if (e) {
             alertify.success("ELEGISTE '" + alertify.labels.ok + "'");
             setTimeout(function() {
-                window.location.href = '../html/n1j4.html'; //Pasa al siguiente juego
+                window.location.href = s + '.html'; //Pasa al siguiente juego
             }, 1300);
         } else {
             alertify.error("ELEGISTE '" + alertify.labels.cancel + "'");
@@ -61,11 +61,11 @@ function enmarcar(event) {
     }
 }
 
-function comprobarN1J8() {
+function comprobarN1J8(s) {
     console.log(checkTable('e').valor);
     console.log(checkTable('i').valor);
     if (checkTable('e').valor & checkTable('i').valor) {
-        confirmar();
+        confirmar(s);
     } else {
         alerta();
     }
