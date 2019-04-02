@@ -9,7 +9,7 @@ var tabla = ['null','null','null','null'];
 function checkTable(letra) {
     var tabla = $('#' + letra);
     var items = tabla.children('tbody').children('tr').find('img');
-    var cont = 4;
+    var cont = 0;
     var padre;
     var hijo;
     for (var i = 0; i < items.length; i++) {
@@ -19,7 +19,9 @@ function checkTable(letra) {
             hijo.appendChild(items[i]);
             padre = document.getElementById('pos-'+items[i].dataset.pos);
             padre.appendChild(hijo);
-            cont--;
+        }
+        if (items[i].dataset.letra == letra){
+            cont++;
         }
     }
 
