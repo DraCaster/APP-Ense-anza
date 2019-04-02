@@ -2,38 +2,55 @@ var pintado = false;
 var selec;
 var sndOK = new Audio("../sonidos/ganaste.wav");
 var sndNO = new Audio("../sonidos/error.wav");
+var tabla = ['null','null','null','null'];
+
+
 
 function checkTable(letra) {
     var tabla = $('#' + letra);
     var items = tabla.children('tbody').children('tr').find('img');
-    console.log(items.length);
-    res = {
-        valor: true,
-        msj: 'Buen trabajo! Pasas al siguiente nivel.'
-    };
-    if (items.length == 4) {
-        items.each(function() {
-            if ($(this).attr('id')[0] != letra) {
-                res.valor = false;
-                res.msj = 'Ups, Algo esta tiene que ir del otro lado';
-            }
-        });
-    } else {
-        res.valor = false;
-        res.msj = 'Te falta completar alguna fila'
+    var cont = 4;
+    var padre;
+    var hijo;
+    for (var i = 0; i < items.length; i++) {
+        if (items[i].dataset.letra != letra){
+            hijo = document.createElement("div");
+            hijo.className+="item";
+            hijo.appendChild(items[i]);
+            padre = document.getElementById('pos-'+items[i].dataset.pos);
+            padre.appendChild(hijo);
+            cont--;
+        }
     }
-    return res;
+
+    //Le devuelvo la propiedad arrastrable a cada imagen
+    $('.item').draggable({
+                helper: 'clone'
+                
+            });
+
+            $('.box-image').droppable({
+                accept: '.item',
+                hoverClass: 'hovering',
+                drop: function(ev, ui) {
+                    ui.draggable.detach();
+                    $(this).append(ui.draggable);
+
+                }
+            });
+
+   return (cont==4);
 }
 
 /*Cartelito*/
 
-function confirmar(s) {
+function confirmar() {
     sndOK.play();
     alertify.confirm("<img src='../img/feliz.jpg'> <h1><b>&iexcl; EXCELENTE ! <br>&iexcl; SIGAMOS JUGANDO ! </b></h1>", function(e) {
         if (e) {
             alertify.success("ELEGISTE '" + alertify.labels.ok + "'");
             setTimeout(function() {
-                window.location.href = s + '.html'; //Pasa al siguiente juego
+                window.location.href = '../html/n1j4.html'; //Pasa al siguiente juego
             }, 1300);
         } else {
             alertify.error("ELEGISTE '" + alertify.labels.cancel + "'");
@@ -61,11 +78,11 @@ function enmarcar(event) {
     }
 }
 
-function comprobarN1J8(s) {
-    console.log(checkTable('e').valor);
-    console.log(checkTable('i').valor);
-    if (checkTable('e').valor & checkTable('i').valor) {
-        confirmar(s);
+function comprobarN1J8() {
+    //console.log(checkTable('e').valor);
+    //console.log(checkTable('i').valor);
+    if (checkTable('e') & checkTable('i')) {
+        confirmar();
     } else {
         alerta();
     }

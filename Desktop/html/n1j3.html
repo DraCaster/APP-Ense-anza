@@ -26,44 +26,44 @@
         <div>
             <table class="tablas tablaj3">
                 <tr>
-                    <td>
+                    <td id="pos-0">
                         <div class="item">
-                            <img id="i4" class="imgJuegosMini fadeIn" data-valor="iglesia" onclick="javascript: reproducirSonido('iglesia.wav'); enmarcar(event);" src="../img/niveles/iglesia.png" alt="imagen numero uno">
+                            <img id="i4" class="imgJuegosMini fadeIn" data-valor="iglesia" data-pos="0" data-letra="i" onclick="javascript: reproducirSonido('iglesia.wav'); enmarcar(event);" src="../img/niveles/iglesia.png" alt="imagen numero uno">
                         </div>
                     </td>
-                    <td>
+                    <td id="pos-1">
                         <div class="item">
-                            <img id="e4" class="imgJuegosMini fadeIn" data-valor="elefante" onclick="javascript: reproducirSonido('elefante.wav'); enmarcar(event);" src="../img/niveles/elefante.png" alt="imagen numero uno">
+                            <img id="e4" class="imgJuegosMini fadeIn" data-valor="elefante" data-pos="1" data-letra="e" onclick="javascript: reproducirSonido('elefante.wav'); enmarcar(event);" src="../img/niveles/elefante.png" alt="imagen numero uno">
                         </div>
                     </td>
-                    <td>
+                    <td id="pos-2">
                         <div class="item">
-                            <img id="e5" class="imgJuegosMini fadeIn" data-valor="escoba" onclick="javascript: reproducirSonido('escoba.wav'); enmarcar(event);" src="../img/niveles/escoba.png" alt="imagen numero uno">
+                            <img id="e5" class="imgJuegosMini fadeIn" data-letra="e" data-pos="2" data-valor="escoba" onclick="javascript: reproducirSonido('escoba.wav'); enmarcar(event);" src="../img/niveles/escoba.png" alt="imagen numero uno">
                         </div>
                     </td>
-                    <td>
+                    <td id="pos-3">
                         <div class="item">
-                            <img id="i5" class="imgJuegosMini fadeIn" data-valor="indio" onclick="javascript: reproducirSonido('indio.wav'); enmarcar(event);" src="../img/niveles/indio.png" alt="imagen numero uno">
+                            <img id="i5" data-letra="i" class="imgJuegosMini fadeIn" data-pos="3" data-valor="indio" onclick="javascript: reproducirSonido('indio.wav'); enmarcar(event);" src="../img/niveles/indio.png" alt="imagen numero uno">
                         </div>
                     </td>
-                    <td>
+                    <td id="pos-4">
                         <div class="item">
-                            <img id="i6" class="imgJuegosMini fadeIn" data-valor="Isla" onclick="javascript: reproducirSonido('isla.wav'); enmarcar(event);" src="../img/niveles/isla.png" alt="imagen numero uno">
+                            <img id="i6" data-letra="i" class="imgJuegosMini fadeIn" data-pos="4" data-valor="Isla" onclick="javascript: reproducirSonido('isla.wav'); enmarcar(event);" src="../img/niveles/isla.png" alt="imagen numero uno">
                         </div>
                     </td>
-                    <td>
+                    <td id="pos-5">
                         <div class="item">
-                            <img id="e6" class="imgJuegosMini fadeIn" data-valor="escuela" onclick="javascript: reproducirSonido('escuela.wav'); enmarcar(event);" src="../img/niveles/escuela.png" alt="imagen numero uno">
+                            <img id="e6" data-letra="e" class="imgJuegosMini fadeIn" data-pos="5" data-valor="escuela" onclick="javascript: reproducirSonido('escuela.wav'); enmarcar(event);" src="../img/niveles/escuela.png" alt="imagen numero uno">
                         </div>
                     </td>
-                    <td>
+                    <td id="pos-6">
                         <div class="item">
-                            <img id="i7" class="imgJuegosMini fadeIn" data-valor="Iman" onclick="javascript: reproducirSonido('iman.wav'); enmarcar(event);" src="../img/niveles/iman.png" alt="imagen numero uno">
+                            <img id="i7" data-letra="i" class="imgJuegosMini fadeIn" data-pos="6" data-valor="Iman" onclick="javascript: reproducirSonido('iman.wav'); enmarcar(event);" src="../img/niveles/iman.png" alt="imagen numero uno">
                         </div>
                     </td>
-                    <td>
+                    <td id="pos-7">
                         <div class="item">
-                            <img id="e7" class="imgJuegosMini fadeIn" data-valor="estante" onclick="javascript: reproducirSonido('estante.wav'); enmarcar(event);" src="../img/niveles/estante.png" alt="imagen numero uno">
+                            <img id="e7" data-letra="e" data-pos="7" class="imgJuegosMini fadeIn" data-valor="estante" onclick="javascript: reproducirSonido('estante.wav'); enmarcar(event);" src="../img/niveles/estante.png" alt="imagen numero uno">
                         </div>
                     </td>
                 </tr>
@@ -90,7 +90,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <div class="box-image"></div>
+                            <div class="box-image"> </div>
                         </td>
                         <td>
                             <div class="box-image"></div>
@@ -133,9 +133,8 @@
             <div>
                 <table class="tablas tablamenu">
                     <td><img src="../img/casa.png" class="botonmenuN" alt="boton salir" onclick="confirmSalida()"></td>
-                    <td><img class="botonmenuN" src="../img/check.png" alt="boton comprobar" onclick="javascript: comprobarN1J8('n1j4')">
+                    <td><img class="botonmenuN" src="../img/check.png" alt="boton comprobar" onclick="javascript: comprobarN1J8()">
                     </td>
-                    <td><img src="../img/refresh.png" class="botonmenuN" alt="boton refrescar" onclick="window.parent.location.reload();"></td>
                 </table>
             </div>
             <!-- contenedor -->
@@ -144,11 +143,12 @@
         <script src="../js/funciones.js"></script>
         <script src="../js/funcionesn1j3.js"></script>
         <script src="../js/jquery-3.1.1.js"></script>
+        <script type="text/javascript"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
         <script>
-            $('.item').draggable({
+        	$('.item').draggable({
                 helper: 'clone'
+                
             });
 
             $('.box-image').droppable({
@@ -157,13 +157,13 @@
                 drop: function(ev, ui) {
                     ui.draggable.detach();
                     $(this).append(ui.draggable);
-                    // $('.ui.draggable').removeClass("imgJuegosG");
-                    // $(this).append(imgJuegosMini);
+
                 }
             });
+
         </script>
         <script>
-            var seleccionadas = [];
+            var seleccionadas = []; 
 
             //Funciones al iniciar el juego
             window.onload = function() {

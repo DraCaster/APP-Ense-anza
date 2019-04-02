@@ -1,5 +1,6 @@
 var pintado = false; // En el juego , si se selecciona una imagen esta var se pone en true
 var letraSelec = null;
+var level = 1; // Nivel del juego
 var letraActual = "u";
 var letraActual2 = "o";
 var letraActual3 = "m";
@@ -56,13 +57,13 @@ function estaEnArreglo(arreglo, dato) {
 
 /*Cartelito*/
 
-function confirmar(s) {
+function confirmar() {
     sndOK.play();
     alertify.confirm("<img src='../img/feliz.jpg'> <h1><b>&iexcl; EXCELENTE ! <br>&iexcl; SIGAMOS JUGANDO ! </b></h1>", function(e) {
         if (e) {
             alertify.success("ELEGISTE '" + alertify.labels.ok + "'");
             setTimeout(function() {
-                window.location.href = s + '.html'; //Pasa al siguiente juego
+                window.location.href = '../html/n1j6.html'; //Pasa al siguiente juego
             }, 1300);
         } else {
             alertify.error("ELEGISTE '" + alertify.labels.cancel + "'");
@@ -87,7 +88,7 @@ function faltanimg() {
 }
 
 
-function comprobarJ5(s) {
+function comprobarJ5() {
 
     if (arregloSeleccion.length == 3) {
         var res = true;
@@ -97,7 +98,8 @@ function comprobarJ5(s) {
             }
         });
         if (res) {
-            confirmar(s);
+            level++;
+            confirmar();
         } else {
             alerta();
         }

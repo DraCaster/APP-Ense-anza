@@ -25,13 +25,13 @@ var sndNO = new Audio("../sonidos/error.wav");
 
 /*Cartelito*/
 
-function confirmar(s) {
+function confirmar() {
     sndOK.play();
     alertify.confirm("<img src='../img/feliz.jpg'> <h1><b>&iexcl; EXCELENTE ! <br>&iexcl; SIGAMOS JUGANDO ! </b></h1>", function(e) {
         if (e) {
             alertify.success("ELEGISTE '" + alertify.labels.ok + "'");
             setTimeout(function() {
-                window.location.href = s + '.html'; //Pasa al siguiente juego
+                window.location.href = '../html/n1j2.html'; //Pasa al siguiente juego
             }, 1300);
         } else {
             alertify.error("ELEGISTE '" + alertify.labels.cancel + "'");
@@ -50,11 +50,11 @@ function alerta() {
 }
 
 /* Verifica que la imagen seleccionada sea la correcta */
-function comprobar(s) {
+function comprobar() {
     pintado = false;
     $('.cambiarBorde').removeClass("cambiarBorde"); //la imagen seleccionada se despinta
     if (letraSelec == letraActual) {
-        confirmar(s);
+        confirmar();
     } else {
         alerta();
     }
